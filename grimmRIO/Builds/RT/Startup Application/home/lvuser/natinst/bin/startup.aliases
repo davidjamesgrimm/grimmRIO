@@ -1,0 +1,8 @@
+[Linux]
+Linux="localhost"
+
+[My Computer]
+My Computer="172.22.11.1"
+
+[VxWorks]
+VxWorks="169.254.69.240"

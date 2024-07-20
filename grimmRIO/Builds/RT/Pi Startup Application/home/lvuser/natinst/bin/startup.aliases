@@ -1,0 +1,11 @@
+[Linux]
+Linux="172.22.11.2"
+
+[My Computer]
+My Computer="169.254.54.171"
+
+[raspberrypi]
+raspberrypi="localhost"
+
+[VxWorks]
+VxWorks="169.254.69.240"

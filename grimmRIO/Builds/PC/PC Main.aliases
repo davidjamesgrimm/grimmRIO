@@ -1,0 +1,11 @@
+[Exec]
+Exec="Exec"
+
+[My Computer]
+My Computer="localhost"
+
+[raspberrypi]
+raspberrypi="169.254.107.58"
+
+[VxWorks]
+VxWorks="169.254.69.240"

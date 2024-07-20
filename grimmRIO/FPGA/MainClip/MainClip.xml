@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<CLIPDeclaration Name="MainClip">
+  <FormatVersion>4.2</FormatVersion>
+  <Description />
+  <TopLevelEntityAndArchitecture>
+    <SynthesisModel>
+      <Entity>MainClip</Entity>
+      <Architecture>RTL</Architecture>
+    </SynthesisModel>
+    <SimulationModel>
+      <Entity>MainClip</Entity>
+      <Architecture>RTL</Architecture>
+    </SimulationModel>
+  </TopLevelEntityAndArchitecture>
+  <CompatibleCLIPSocketList>
+    <Socket>sbRIO-9651 Socket</Socket>
+  </CompatibleCLIPSocketList>
+  <SupportedDeviceFamilies>Zynq</SupportedDeviceFamilies>
+  <InterfaceList>
+    <Interface Name="Socket">
+      <InterfaceType>Socket</InterfaceType>
+      <SignalList>
+        <Signal Name="aDio">
+          <HDLName>aDio</HDLName>
+          <HDLType>std_logic_vector(87 downto 0)</HDLType>
+          <Direction>Bidirectional</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Array>
+              <Boolean />
+              <Size>88</Size>
+            </Array>
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aDio_n">
+          <HDLName>aDio_n</HDLName>
+          <HDLType>std_logic_vector(87 downto 16)</HDLType>
+          <Direction>Bidirectional</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Array>
+              <Boolean />
+              <Size>72</Size>
+            </Array>
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="CAN0_RX">
+          <HDLName>CAN0_RX</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="CAN0_TX">
+          <HDLName>CAN0_TX</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="CAN0_RS">
+          <HDLName>CAN0_RS</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="CAN1_RX">
+          <HDLName>CAN1_RX</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="CAN1_TX">
+          <HDLName>CAN1_TX</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="CAN1_RS">
+          <HDLName>CAN1_RS</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="EnetClk125">
+          <HDLName>EnetClk125</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="SerialClk">
+          <HDLName>SerialClk</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_GMII_COL">
+          <HDLName>GBE1_GMII_COL</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_GMII_CRS">
+          <HDLName>GBE1_GMII_CRS</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_GMII_RX_CLK">
+          <HDLName>GBE1_GMII_RX_CLK</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_GMII_RX_DV">
+          <HDLName>GBE1_GMII_RX_DV</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_GMII_RX_ER">
+          <HDLName>GBE1_GMII_RX_ER</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_GMII_RX_D">
+          <HDLName>GBE1_GMII_RX_D</HDLName>
+          <HDLType>std_logic_vector(7 downto 0)</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <U8 />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_GMII_TX_CLK">
+          <HDLName>GBE1_GMII_TX_CLK</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_GMII_TX_EN">
+          <HDLName>GBE1_GMII_TX_EN</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_GMII_TX_ER">
+          <HDLName>GBE1_GMII_TX_ER</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_GMII_TX_D">
+          <HDLName>GBE1_GMII_TX_D</HDLName>
+          <HDLType>std_logic_vector(7 downto 0)</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <U8 />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_MDC">
+          <HDLName>GBE1_MDC</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_MDIO_In">
+          <HDLName>GBE1_MDIO_In</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_MDIO_Out">
+          <HDLName>GBE1_MDIO_Out</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_MDIO_Enable">
+          <HDLName>GBE1_MDIO_Enable</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aEth1AtGigabit_n">
+          <HDLName>aEth1AtGigabit_n</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aEth1At10Mb_n">
+          <HDLName>aEth1At10Mb_n</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="GBE1_IRQ">
+          <HDLName>GBE1_IRQ</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="sSerialRegPortIn">
+          <HDLName>sSerialRegPortIn</HDLName>
+          <HDLType>std_logic_vector(100 downto 0)</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Array>
+              <Boolean />
+              <Size>101</Size>
+            </Array>
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="sSerialRegPortOut">
+          <HDLName>sSerialRegPortOut</HDLName>
+          <HDLType>std_logic_vector(64 downto 0)</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Array>
+              <Boolean />
+              <Size>65</Size>
+            </Array>
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial1Dtr_n">
+          <HDLName>aSerial1Dtr_n</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial1Rts_n">
+          <HDLName>aSerial1Rts_n</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial1Cts_n">
+          <HDLName>aSerial1Cts_n</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial1Dsr_n">
+          <HDLName>aSerial1Dsr_n</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial1Ri_n">
+          <HDLName>aSerial1Ri_n</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial1Dcd_n">
+          <HDLName>aSerial1Dcd_n</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial2Irq">
+          <HDLName>aSerial2Irq</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial3Irq">
+          <HDLName>aSerial3Irq</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial4Irq">
+          <HDLName>aSerial4Irq</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial5Irq">
+          <HDLName>aSerial5Irq</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+        <Signal Name="aSerial6Irq">
+          <HDLName>aSerial6Irq</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>FromCLIP</Direction>
+          <SignalType>data</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+          <UseInLabVIEWSingleCycleTimedLoop>NotAllowed</UseInLabVIEWSingleCycleTimedLoop>
+        </Signal>
+      </SignalList>
+    </Interface>
+    <Interface Name="Fabric">
+      <InterfaceType>Fabric</InterfaceType>
+      <SignalList>
+        <Signal Name="aReset">
+          <HDLName>aReset</HDLName>
+          <HDLType>std_logic</HDLType>
+          <Direction>ToCLIP</Direction>
+          <SignalType>reset</SignalType>
+          <Description />
+          <DataType>
+            <Boolean />
+          </DataType>
+        </Signal>
+      </SignalList>
+    </Interface>
+  </InterfaceList>
+  <ImplementationList>
+    <Path Name="MainClip.vhd">
+      <TopLevel />
+      <MD5>1</MD5>
+      <SimulationFileList>
+        <SimulationModelType>Same as synthesis</SimulationModelType>
+      </SimulationFileList>
+    </Path>
+    <Path Name="MainClip.xdc">
+      <MD5>1</MD5>
+      <SimulationFileList>
+        <SimulationModelType>Same as synthesis</SimulationModelType>
+      </SimulationFileList>
+    </Path>
+  </ImplementationList>
+  <NumberOfDCMsNeeded>0</NumberOfDCMsNeeded>
+  <NumberOfMMCMsNeeded>0</NumberOfMMCMsNeeded>
+  <NumberOfBufGsNeeded>0</NumberOfBufGsNeeded>
+</CLIPDeclaration>
