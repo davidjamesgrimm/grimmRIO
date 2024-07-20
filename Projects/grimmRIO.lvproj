@@ -209,6 +209,9 @@ AddOutputFilter chunkFilter
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
+		<Item Name="RT" Type="Folder" URL="../../RT">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="Chassis" Type="cRIO Chassis">
 			<Property Name="crio.ProgrammingMode" Type="Str">fpga</Property>
 			<Property Name="crio.ResourceID" Type="Str">RIO0</Property>
@@ -1556,6 +1559,9 @@ AddOutputFilter chunkFilter
 					</Item>
 				</Item>
 				<Item Name="FIFOs" Type="Folder"/>
+				<Item Name="FPGA" Type="Folder" URL="../../FPGA">
+					<Property Name="NI.DISK" Type="Bool">true</Property>
+				</Item>
 				<Item Name="40 MHz Onboard Clock" Type="FPGA Base Clock">
 					<Property Name="FPGA.PersistentID" Type="Str">{E8E57BE7-812F-419E-A79D-062F4A93BFC2}</Property>
 					<Property Name="NI.LV.FPGA.BaseTSConfig" Type="Str">ResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E;</Property>
@@ -1594,11 +1600,167 @@ AddOutputFilter chunkFilter
 						<Property Name="NI.LV.FPGA.Version" Type="Int">5</Property>
 					</Item>
 				</Item>
-				<Item Name="Dependencies" Type="Dependencies"/>
+				<Item Name="Dependencies" Type="Dependencies">
+					<Item Name="vi.lib" Type="Folder">
+						<Item Name="lvSimController.dll" Type="Document" URL="/&lt;vilib&gt;/RVI/Simulation/lvSimController.dll"/>
+						<Item Name="FxpSim.dll" Type="Document" URL="/&lt;vilib&gt;/RVI/FXPMathLib/sim/FxpSim.dll"/>
+						<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+					</Item>
+					<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
+						<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+					</Item>
+				</Item>
 				<Item Name="Build Specifications" Type="Build"/>
 			</Item>
 		</Item>
-		<Item Name="Dependencies" Type="Dependencies"/>
+		<Item Name="Dependencies" Type="Dependencies">
+			<Item Name="user.lib" Type="Folder">
+				<Item Name="Get Strings from Enum__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Get Strings from Enum__ogtk.vi"/>
+				<Item Name="MGI Clear Error.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Error Handling/MGI Clear Error.vi"/>
+				<Item Name="Reorder 1D Array2 (Path)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Reorder 1D Array2 (Path)__ogtk.vi"/>
+				<Item Name="Reorder Array2__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Reorder Array2__ogtk.vi"/>
+				<Item Name="Sort 1D Array (DBL)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Sort 1D Array (DBL)__ogtk.vi"/>
+				<Item Name="Sort Array__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Sort Array__ogtk.vi"/>
+			</Item>
+			<Item Name="vi.lib" Type="Folder">
+				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
+				<Item Name="Channel Select.ctl" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/LINX-DAC8552/Channel Select.ctl"/>
+				<Item Name="Channel Selection.ctl" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/ADS1256 ADC/Channel Selection.ctl"/>
+				<Item Name="Channels.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Device/Type Defs/Channels.ctl"/>
+				<Item Name="Check Channel.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Public/Utilities/Check Channel.vi"/>
+				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
+				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="Create Directory Recursive.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Create Directory Recursive.vi"/>
+				<Item Name="Create File and Containing Folders.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Create File and Containing Folders.vi"/>
+				<Item Name="Digital Read 1 Chan.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Public/Peripherals/Digital/Digital Read 1 Chan.vi"/>
+				<Item Name="Digital Read N Chans.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Public/Peripherals/Digital/Digital Read N Chans.vi"/>
+				<Item Name="Digital Read.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Device/Peripheral/Digital/Digital Read.vi"/>
+				<Item Name="Digital Read.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Public/Peripherals/Digital/Digital Read.vi"/>
+				<Item Name="Digital Write 1 Chan.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Public/Peripherals/Digital/Digital Write 1 Chan.vi"/>
+				<Item Name="Digital Write N Chans.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Public/Peripherals/Digital/Digital Write N Chans.vi"/>
+				<Item Name="Digital Write.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Device/Peripheral/Digital/Digital Write.vi"/>
+				<Item Name="Digital Write.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Public/Peripherals/Digital/Digital Write.vi"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Generate Error.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Utilties/Generate Error.vi"/>
+				<Item Name="Initialise.vi" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/ADS1256 ADC/Initialise.vi"/>
+				<Item Name="Interface.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Type Defs/Interface.ctl"/>
+				<Item Name="Internecine Avoider.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/Internecine Avoider.vi"/>
+				<Item Name="LINX Device Config.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Device/Type Defs/LINX Device Config.ctl"/>
+				<Item Name="LINX Ref.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Type Defs/LINX Ref.ctl"/>
+				<Item Name="LINX SPI.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/LINX SPI/LINX SPI.lvclass"/>
+				<Item Name="LINX-ADS1256.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/ADS1256 ADC/LINX-ADS1256.lvclass"/>
+				<Item Name="LINX-DAC8552.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/LINX-DAC8552/LINX-DAC8552.lvclass"/>
+				<Item Name="LinxDigitalRead.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Local IO/LinxDigitalRead.vi"/>
+				<Item Name="LinxDigitalWrite.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Local IO/LinxDigitalWrite.vi"/>
+				<Item Name="List Directory and LLBs.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/List Directory and LLBs.vi"/>
+				<Item Name="LVDateTimeRec.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVDateTimeRec.ctl"/>
+				<Item Name="LVMapReplaceAction.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVMapReplaceAction.ctl"/>
+				<Item Name="New ADS1256 Device.vi" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/ADS1256 ADC/New ADS1256 Device.vi"/>
+				<Item Name="New DAC8552.vi" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/LINX-DAC8552/New DAC8552.vi"/>
+				<Item Name="New LINX SPI Channel.vi" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/LINX SPI/New LINX SPI Channel.vi"/>
+				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
+				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
+				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
+				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="NI_PtbyPt.lvlib" Type="Library" URL="/&lt;vilib&gt;/ptbypt/NI_PtbyPt.lvlib"/>
+				<Item Name="nisyscfg.lvlib" Type="Library" URL="/&lt;vilib&gt;/nisyscfg/nisyscfg.lvlib"/>
+				<Item Name="Open Local.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Public/Utilities/Open Local.vi"/>
+				<Item Name="Open.vi" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Public/Open.vi"/>
+				<Item Name="Peripheral.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Type Defs/Peripheral.ctl"/>
+				<Item Name="Platform.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Type Defs/Platform.ctl"/>
+				<Item Name="Power Down Mode.ctl" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/LINX-DAC8552/Power Down Mode.ctl"/>
+				<Item Name="Power Down.vi" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/LINX-DAC8552/Power Down.vi"/>
+				<Item Name="Programmable Gain Selection.ctl" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/ADS1256 ADC/Programmable Gain Selection.ctl"/>
+				<Item Name="Read Channel Single Shot (Volts).vi" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/ADS1256 ADC/Read Channel Single Shot (Volts).vi"/>
+				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
+				<Item Name="Sample Rate.ctl" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/ADS1256 ADC/Sample Rate.ctl"/>
+				<Item Name="Set DAC (Volts).vi" Type="VI" URL="/&lt;vilib&gt;/MediaMongrels/LINX Raspberry Pi Addons/LINX-DAC8552/Set DAC (Volts).vi"/>
+				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
+				<Item Name="SPI Bit Order.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Type Defs/Peripherals/SPI/SPI Bit Order.ctl"/>
+				<Item Name="SPI Configuration.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Type Defs/Peripherals/SPI/SPI Configuration.ctl"/>
+				<Item Name="SPI CS Config.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Public/Peripherals/SPI/SPI CS Config.ctl"/>
+				<Item Name="SPI CS Logic Level.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Type Defs/Peripherals/SPI/SPI CS Logic Level.ctl"/>
+				<Item Name="SPI Mode.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Type Defs/Peripherals/SPI/SPI Mode.ctl"/>
+				<Item Name="Stream Element Allocation Mode.ctl" Type="VI" URL="/&lt;vilib&gt;/dex/Stream Element Allocation Mode.ctl"/>
+				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
+				<Item Name="TCP Config.ctl" Type="VI" URL="/&lt;vilib&gt;/MakerHub/LINX/Private/Device/Type Defs/TCP Config.ctl"/>
+				<Item Name="TCP Listen Internal List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen Internal List.vi"/>
+				<Item Name="TCP Listen List Operations.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen List Operations.ctl"/>
+				<Item Name="TCP Listen.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen.vi"/>
+				<Item Name="Trim Whitespace One-Sided.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace One-Sided.vi"/>
+				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
+				<Item Name="Trim Whitespace__JDP.vi" Type="VI" URL="/&lt;vilib&gt;/JDP Science/JDP Science Common Utilities/Trim Whitespace__JDP.vi"/>
+				<Item Name="UDP Multicast Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Open.vi"/>
+				<Item Name="UDP Multicast Read-Only Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Read-Only Open.vi"/>
+				<Item Name="UDP Multicast Read-Write Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Read-Write Open.vi"/>
+				<Item Name="UDP Multicast Write-Only Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Write-Only Open.vi"/>
+				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
+			</Item>
+			<Item Name="Analog Data.ctl" Type="VI" URL="../../Type Definitions/Analog Data.ctl"/>
+			<Item Name="Analog Output Command.ctl" Type="VI" URL="../../Type Definitions/Analog Output Command.ctl"/>
+			<Item Name="Analog Output Data.ctl" Type="VI" URL="../../Type Definitions/Analog Output Data.ctl"/>
+			<Item Name="Build Data Frame.vi" Type="VI" URL="../../SubVIs/Build Data Frame.vi"/>
+			<Item Name="Check if Notifier is Registered.vi" Type="VI" URL="../../SubVIs/Synchronization/Check if Notifier is Registered.vi"/>
+			<Item Name="Command TCP State.ctl" Type="VI" URL="../../Type Definitions/Command TCP State.ctl"/>
+			<Item Name="Compute CRC32.vi" Type="VI" URL="../../SubVIs/Compute CRC32.vi"/>
+			<Item Name="Computer Metadata.ctl" Type="VI" URL="../../Type Definitions/Computer Metadata.ctl"/>
+			<Item Name="Computer Resources.ctl" Type="VI" URL="../../Type Definitions/Computer Resources.ctl"/>
+			<Item Name="CPU Usage.ctl" Type="VI" URL="../../Type Definitions/CPU Usage.ctl"/>
+			<Item Name="Cumulative Sum.vi" Type="VI" URL="../../SubVIs/Cumulative Sum.vi"/>
+			<Item Name="Data Frame Header.ctl" Type="VI" URL="../../Type Definitions/Data Frame Header.ctl"/>
+			<Item Name="Data Frame.ctl" Type="VI" URL="../../Type Definitions/Data Frame.ctl"/>
+			<Item Name="Device Parameters.ctl" Type="VI" URL="../../Type Definitions/Device Parameters.ctl"/>
+			<Item Name="Device.ctl" Type="VI" URL="../../Type Definitions/Device.ctl"/>
+			<Item Name="Digital Input Data.ctl" Type="VI" URL="../../Type Definitions/Digital Input Data.ctl"/>
+			<Item Name="Digital Output Command.ctl" Type="VI" URL="../../Type Definitions/Digital Output Command.ctl"/>
+			<Item Name="Digital Output Data.ctl" Type="VI" URL="../../Type Definitions/Digital Output Data.ctl"/>
+			<Item Name="Discovery Engine State.ctl" Type="VI" URL="../../Type Definitions/Discovery Engine State.ctl"/>
+			<Item Name="Disk State.ctl" Type="VI" URL="../../Type Definitions/Disk State.ctl"/>
+			<Item Name="Enum - Commands.ctl" Type="VI" URL="../../Type Definitions/Enum - Commands.ctl"/>
+			<Item Name="Enum - Data.ctl" Type="VI" URL="../../Type Definitions/Enum - Data.ctl"/>
+			<Item Name="Enum - Metadata.ctl" Type="VI" URL="../../Type Definitions/Enum - Metadata.ctl"/>
+			<Item Name="Enum - Notification Types.ctl" Type="VI" URL="../../Type Definitions/Enum - Notification Types.ctl"/>
+			<Item Name="Enum - Parameters.ctl" Type="VI" URL="../../Type Definitions/Enum - Parameters.ctl"/>
+			<Item Name="Enum - System State.ctl" Type="VI" URL="../../Type Definitions/Enum - System State.ctl"/>
+			<Item Name="Exec_FPGA.lvbitx" Type="Document" URL="../../Builds/FPGA Bitfiles/Exec_FPGA.lvbitx"/>
+			<Item Name="Find Generic Data Frame Sync Bytes over TCP.vi" Type="VI" URL="../../TCP Read/SubVIs/Find Generic Data Frame Sync Bytes over TCP.vi"/>
+			<Item Name="Get Device.vi" Type="VI" URL="../../SubVIs/Get Device.vi"/>
+			<Item Name="Get Notifier from Key.vi" Type="VI" URL="../../SubVIs/Get Notifier from Key.vi"/>
+			<Item Name="Get Registered Notifiers.vi" Type="VI" URL="../../SubVIs/Synchronization/Get Registered Notifiers.vi"/>
+			<Item Name="Get Registered Queues.vi" Type="VI" URL="../../SubVIs/Synchronization/Get Registered Queues.vi"/>
+			<Item Name="GPS Solution Data.ctl" Type="VI" URL="../../Type Definitions/GPS Solution Data.ctl"/>
+			<Item Name="Increment Counter and Compute CRC.vi" Type="VI" URL="../../SubVIs/Increment Counter and Compute CRC.vi"/>
+			<Item Name="Increment Counter.vi" Type="VI" URL="../../SubVIs/Increment Counter.vi"/>
+			<Item Name="Internet Connection Monitor.ctl" Type="VI" URL="../../Type Definitions/Internet Connection Monitor.ctl"/>
+			<Item Name="LINX Resources.ctl" Type="VI" URL="../../Type Definitions/LINX Resources.ctl"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
+			<Item Name="Memory Monitor.ctl" Type="VI" URL="../../Type Definitions/Memory Monitor.ctl"/>
+			<Item Name="Network Adapter State.ctl" Type="VI" URL="../../Type Definitions/Network Adapter State.ctl"/>
+			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="nisyscfg.dll" Type="Document" URL="nisyscfg.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="Notification Data.ctl" Type="VI" URL="../../Type Definitions/Notification Data.ctl"/>
+			<Item Name="Obtain and Register Notifier.vi" Type="VI" URL="../../SubVIs/Synchronization/Obtain and Register Notifier.vi"/>
+			<Item Name="Obtain and Register Queue.vi" Type="VI" URL="../../SubVIs/Synchronization/Obtain and Register Queue.vi"/>
+			<Item Name="Obtain Notifier Registry.vi" Type="VI" URL="../../SubVIs/Synchronization/Obtain Notifier Registry.vi"/>
+			<Item Name="Payload Class.ctl" Type="VI" URL="../../Type Definitions/Payload Class.ctl"/>
+			<Item Name="Queue Monitor.ctl" Type="VI" URL="../../Type Definitions/Queue Monitor.ctl"/>
+			<Item Name="Read Generic Data Frame from TCP.vi" Type="VI" URL="../../TCP Read/SubVIs/Read Generic Data Frame from TCP.vi"/>
+			<Item Name="Real Time Task Status.ctl" Type="VI" URL="../../Type Definitions/Real Time Task Status.ctl"/>
+			<Item Name="RT Image Metadata.ctl" Type="VI" URL="../../Type Definitions/RT Image Metadata.ctl"/>
+			<Item Name="RTOSMonitor.ctl" Type="VI" URL="../../Type Definitions/RTOSMonitor.ctl"/>
+			<Item Name="Send Notification.vi" Type="VI" URL="../../SubVIs/Send Notification.vi"/>
+			<Item Name="Software Monitor.ctl" Type="VI" URL="../../Type Definitions/Enumerated Constants/Software Monitor.ctl"/>
+			<Item Name="Startup Settings.ctl" Type="VI" URL="../../Type Definitions/Startup Settings.ctl"/>
+			<Item Name="System Resources.ctl" Type="VI" URL="../../Type Definitions/System Resources.ctl"/>
+			<Item Name="System Time.ctl" Type="VI" URL="../../Type Definitions/System Time.ctl"/>
+			<Item Name="Telemetry Recorder Status.ctl" Type="VI" URL="../../Type Definitions/Telemetry Recorder Status.ctl"/>
+			<Item Name="Telemetry TCP State.ctl" Type="VI" URL="../../Type Definitions/Telemetry TCP State.ctl"/>
+			<Item Name="Writeable Drives.ctl" Type="VI" URL="../../Type Definitions/Writeable Drives.ctl"/>
+		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
 </Project>
